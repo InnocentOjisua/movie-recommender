@@ -9,7 +9,7 @@ import pickle
 from difflib import get_close_matches
 
 # ----------------------------
-# 1️⃣ Load preprocessed data
+# 1️Load preprocessed data
 # ----------------------------
 movies_cleaned = pd.read_csv("movies_cleaned.csv")
 sig_matrix = load_npz("sig_matrix.npz")
@@ -17,7 +17,7 @@ with open("indices.pkl", "rb") as f:
     indices = pickle.load(f)
 
 # ----------------------------
-# 2️⃣ Combine text features for richer plot understanding
+# 2️ Combine text features for richer plot understanding
 # ----------------------------
 def combine_features(df):
     # Use overview + keywords + genres
@@ -27,7 +27,7 @@ def combine_features(df):
 movies_cleaned = combine_features(movies_cleaned)
 
 # ----------------------------
-# 3️⃣ Recommendation function
+# 3️ Recommendation function
 # ----------------------------
 def recommend_movies(title, similarity_matrix=sig_matrix):
     # Make the search case-insensitive
@@ -51,10 +51,10 @@ def recommend_movies(title, similarity_matrix=sig_matrix):
     return recommended_titles
 
 # ----------------------------
-# 4️⃣ Streamlit UI
+# 4️ Streamlit UI
 # ----------------------------
 st.title("Movie Recommendation Engine")
-st.subheader("Type a movie and get 10 similar movies based on plot, keywords, and genres!")
+st.subheader("Type a movie and get 10 similar movies based on plot, keywords, and genres")
 st.markdown("🎵 Let’s find your next movie adventure!")
 
 movie_input = st.text_input("Enter a movie title:")
