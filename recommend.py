@@ -55,7 +55,7 @@ def recommend_movies(title, similarity_matrix=sig_matrix):
 # ----------------------------
 st.title("Movie Recommendation Engine")
 st.subheader("Type a movie and get 10 similar movies based on plot, keywords, and genres")
-st.markdown("🎵 Let’s find your next movie adventure!")
+st.markdown("Let’s find your next movie adventure!")
 
 movie_input = st.text_input("Enter a movie title:")
 if movie_input:
